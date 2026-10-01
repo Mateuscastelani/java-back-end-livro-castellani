@@ -2,6 +2,7 @@ package com.castellani.java_back_end_livro;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -48,6 +49,14 @@ public class UserController {
 
     }
 
+
+    @GetMapping ("/{cpf}")
+    public UserDTO getUserFiltro(@PathVariable String cpf){
+        return usuarios.stream()
+                .filter(u -> u.getCpf().equals(cpf))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("User not found."));
+    }
 
     @GetMapping
     public List<UserDTO> getUser(){
