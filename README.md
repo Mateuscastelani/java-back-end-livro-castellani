@@ -1,29 +1,37 @@
 java-back-end-livro
+
 Este repositório contém o código de acompanhamento do livro Java Back-End, adaptado e atualizado para as tecnologias mais recentes.
 
 Serviços
+
 A aplicação é composta por três microsserviços: user-api, product-api e shopping-api.
 
-user-api: Possui os serviços para gerir os utilizadores da aplicação.
+user-api: Possui os serviços para gerenciar os usuários da aplicação.
 
-product-api: Possui os serviços para gerir os produtos disponíveis para compra.
+product-api: Possui os serviços para gerenciar os produtos disponíveis para compra.
 
-shopping-api: Possui os serviços para que os utilizadores realizem compras.
+shopping-api: Possui os serviços para que os usuários realizem compras.
 
-Base de Dados
-As aplicações criam as tabelas automaticamente quando são executadas pela primeira vez, no entanto, a base de dados tem de ser criada previamente no PostgreSQL.
-As aplicações estão configuradas para se ligarem à base de dados dev. Por isso, antes de correr as aplicações, certifique-se de que cria esta base de dados. Se pretender alterar o nome, modifique o ficheiro application.properties de cada projeto. Se utilizar o docker-compose, esta base de dados já é criada automaticamente.
-Todos os projetos acedem à mesma base de dados, criando apenas schemas distintos.
+Banco de Dados
+
+As aplicações criam as tabelas automaticamente quando são executadas pela primeira vez, no entanto, o banco de dados deve ser criado previamente no PostgreSQL.
+
+As aplicações estão configuradas para se conectarem ao banco de dados dev. Por isso, antes de rodar as aplicações, certifique-se de criar este banco de dados. Se quiser alterar o nome do banco de dados, modifique o arquivo application.properties de cada projeto. Utilizando o docker-compose, esse banco de dados já é criado automaticamente.
+
+Todos os projetos acessam o mesmo banco de dados, apenas criam schemas diferentes.
 
 Insomnia
-O ficheiro insomnia_collection.json (disponível na raiz do projeto) é um espaço de trabalho exportado do Insomnia que possui as requisições configuradas para os serviços da aplicação. A coleção está estruturada para aceder aos serviços já no Kubernetes. Para realizar as chamadas na sua execução local, basta alterar o domínio base (por exemplo, de shopping.com para localhost:808x).
+
+O arquivo insomnia_collection.json (disponível na raiz do projeto) é um workspace exportado do Insomnia que possui as requisições configuradas para os serviços da aplicação. A coleção está estruturada para chamar os serviços já no Kubernetes. Para chamar na execução local, basta trocar o domínio base (por exemplo, de shopping.com para localhost:808x).
 
 Execução
-A forma mais simples de executar a aplicação é através do docker-compose. Para tal, basta executar o comando docker-compose up após a criação das imagens Docker dos respetivos microsserviços.
+
+A maneira mais simples de executar a aplicação é utilizando o docker-compose. Para isso, basta executar o comando docker-compose up depois que as imagens Docker dos microsserviços forem criadas.
 
 Versões
+
 As aplicações foram atualizadas e configuradas para utilizar as seguintes tecnologias:
 
 Java: Versão 25
 
-Spring Boot: Versão mais recente e atualizada (compatível com Java 25)
+Spring Boot: Versão mais recente
