@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class JavaBackEndLivroApplication {
 
-	public static void main(String[] args) {
+	static void main(String[] args) {
 
 		SpringApplication.run(JavaBackEndLivroApplication.class, args);
 	}

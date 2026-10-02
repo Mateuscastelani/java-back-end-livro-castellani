@@ -1,10 +1,8 @@
 package com.castellani.java_back_end_livro;
 
 import jakarta.annotation.PostConstruct;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -67,5 +65,13 @@ public class UserController {
     @GetMapping("/")
     public String getMensagem() {
         return "Hello World!";
+    }
+
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public UserDTO inserir(@RequestBody UserDTO userDTO){
+        userDTO.setDataCadastro(LocalDateTime.now());
+        return userDTO;
     }
 }
