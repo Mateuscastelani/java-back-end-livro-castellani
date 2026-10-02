@@ -1,6 +1,7 @@
 package com.castellani.java_back_end_livro;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -70,7 +71,7 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public UserDTO inserir(@RequestBody UserDTO userDTO){
+    public UserDTO inserir(@RequestBody @Valid UserDTO userDTO){
         userDTO.setDataCadastro(LocalDateTime.now());
         return userDTO;
     }
