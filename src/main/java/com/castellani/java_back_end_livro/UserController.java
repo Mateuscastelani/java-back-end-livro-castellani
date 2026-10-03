@@ -75,4 +75,11 @@ public class UserController {
         userDTO.setDataCadastro(LocalDateTime.now());
         return userDTO;
     }
+
+    @DeleteMapping("/{cpf}")
+    public boolean remover(@PathVariable String cpf){
+        return usuarios.removeIf(u -> u.getCpf().equals(cpf));
+    }
+
+
 }
