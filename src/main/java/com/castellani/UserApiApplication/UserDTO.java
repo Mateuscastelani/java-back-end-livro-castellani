@@ -1,4 +1,4 @@
-package com.castellani.java_back_end_livro;
+package com.castellani.UserApiApplication;
 
 
 import jakarta.validation.constraints.NotBlank;
