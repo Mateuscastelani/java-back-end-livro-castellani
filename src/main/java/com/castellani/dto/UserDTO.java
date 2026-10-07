@@ -1,4 +1,4 @@
-package com.castellani.service;
+package com.castellani.dto;
 
 
 import com.castellani.model.User;

@@ -1,6 +1,6 @@
 package com.castellani.controller;
 
-import com.castellani.service.UserDTO;
+import com.castellani.dto.UserDTO;
 import jakarta.annotation.PostConstruct;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
