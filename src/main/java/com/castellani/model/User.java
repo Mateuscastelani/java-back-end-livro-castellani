@@ -1,6 +1,6 @@
-package com.castellani.UserApiApplication.model;
+package com.castellani.model;
 
-import com.castellani.UserApiApplication.UserDTO;
+import com.castellani.service.UserDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
